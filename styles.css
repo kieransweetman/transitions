@@ -1,0 +1,89 @@
+
+
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#choice-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #575775 ;
+    gap: 20px;
+    height: 400px;
+    width: 600px;
+    
+    
+}
+
+#choice-cards, .btn {
+    animation: "fadeOut" 2.5s ;
+    animation-play-state: paused;
+    
+}
+
+
+
+.card-converter {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: red;
+    height: 250px;
+    width: 250px;
+    border-radius: 6px;
+   
+    
+}
+
+.card-converter.words  {
+    animation-play-state: paused;
+}
+.card-converter.currency {
+    animation-play-state: paused;
+    
+}
+
+
+.card-converter:hover {
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white ;
+    animation-play-state: running;
+    animation-duration: 1s;
+    
+    
+}
+
+
+.numberToWord {
+    display: flex;
+    flex-direction: column;
+    animation-play-state: paused;
+    animation-delay: 2.5s;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type=checkbox]    {
+    display: none;
+}
+
+input:checked   .numberToWord {
+    display: flex;
+
+    
+    
+}
+
+
+
+label.btn {
+    height: 100%;
+    width: 100%;
+}
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script type ="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/js-written-number-master/dist/written-number.js"></script>
+    <script type = "text/javascript" src="myjs.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="choice-cards">
+            <form class="card-converter words animate__animated animate__headShake">
+                <input type = 'checkbox'  id="btncontrolwords" >
+                <label for="btncontrolwords" class="btn ">Words</label>
+                
+            </form>
+            <form class="card-converter currency animate__animated animate__headShake">
+                <input type = 'checkbox'  id="btncontrol" >
+                <label for="btncontrol" class="btn">currency</label>
+                
+            </form>
+            
+        </div>
+        <div class="numberToWord animate__animated animate__fadeIn">
+            <button id = "goBackBtn" type="button" value="go back" style="width: 5rem; height: 5rem;"></button>
+            <p class="ntf_title">Type in a number to convert to French</p>
+            <input id="number_to_format" max="1000000000000" name="ntf_text" step="0.01" type="number">
+            <p id="ntf_userOutput">&nbsp;</p>
+            <p id="decimal_formatter">&nbsp;</p>
+        </div>
+        <div id="empty-1">
+
+        </div>
+        <div id="empty-2">
+
+        </div>
+            
+        
+    </div>
+</body>
+</html>
