@@ -9,49 +9,45 @@
 
     const animationEndWords = document.querySelector(".words");
     animationEndWords.onanimationend = () => {
-        animationEndWords.classList.remove("animate__headShake");
-        setTimeout(() => {animationEndWords.classList.add("animate__headShake")},50);
+        animationEndWords.classList.remove("animate__swing");
+        setTimeout(() => {animationEndWords.classList.add("animate__swing")},50);
         
 
     };
    
     const animationEndCurrency = document.querySelector(".currency");
     animationEndCurrency.onanimationend = () => {
-        animationEndCurrency.classList.remove("animate__headShake");
-        setTimeout(() => {animationEndCurrency.classList.add("animate__headShake")},50);
+        animationEndCurrency.classList.remove("animate__swing");
+        setTimeout(() => {animationEndCurrency.classList.add("animate__swing")},50);
 
     };
 // end
 
 
 // transition toggle() function
-    function toggle()  {
+    function transitionToConverter()  {
 
         let check1 = document.querySelector('#btncontrolwords');
         let check2 = document.querySelector('#btncontrol');
-        let toggle = document.querySelector('.numberToWord');
+        let ntwElement = document.querySelector('.numberToWord');
         let choice_cards = document.querySelector('#choice-cards');
 
         // transition
-        check1.addEventListener('change', function() {
-            if (check1.checked) {
-                console.log('test');
-                choice_cards.style.setProperty("animation-play-state", "running")
-                setTimeout(() => {choice_cards.style.display = "none"}, 2450);
-                toggle.style.setProperty("animation-play-state", 'running');
-                
-            } 
-        })
-        check2.addEventListener('change', function () {
-            if (check2.checked) {
-                choice_cards.style.setProperty("animation-play-state", "running")
-                setTimeout(() => {choice_cards.style.display = "none"}, 2450);
-                toggle.style.setProperty("animation-play-state", 'running');
-            }
-        })
+
+        function checkboxChecker(element) {
+            element.addEventListener('change', function() {
+                if(element.checked) {
+                    choice_cards.style.setProperty("animation-play-state", "running");
+                    setTimeout(() => {choice_cards.style.display = "none"}, 2450);
+                    ntwElement.style.setProperty("animation-play-state", "running");
+                }
+            });
+        };
+        checkboxChecker(check1);
+        checkboxChecker(check2);
         
     };
-    toggle();
+    transitionToConverter();
 // end
    
 // ntw input converter
@@ -64,6 +60,7 @@
         writtenNumber.defaults.lang = "fr";
         
         let inputstring = input.value;
+
         if (inputstring.indexOf(".") > -1) {
             let newString = inputstring.split(".");
             let decimalPoint = newString.pop();
@@ -78,19 +75,10 @@
  });
 
  // return to card choices in progress 
+ // a test, all of this is not very well coded.
 
     const goBackButton = document.querySelector("#goBackBtn");
     goBackButton.addEventListener('click', function () {
-        const ntwClass = document.querySelector(".numberToWord");
-        ntwClass.classList.remove("animate__fadeIn");
-        ntwClass.style.setProperty('animation-delay', '0s')
-        ntwClass.classList.add("animate__fadeOut");
-        setTimeout(() => {ntwClass.style.display = "none"}, 1500);
-
-        let choice_cards = document.querySelector('#choice-cards');
-       
-        choice_cards.classList.add('animate__fadeIn');
-
     });
  //end
  });
