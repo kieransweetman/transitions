@@ -7,48 +7,50 @@
 
 // resseting the animation but this isnt what im looking for
 
-    const animationEndWords = document.querySelector(".words");
-    animationEndWords.onanimationend = () => {
-        animationEndWords.classList.remove("animate__swing");
-        setTimeout(() => {animationEndWords.classList.add("animate__swing")},50);
+//     const animationEndWords = document.querySelector(".words");
+//     animationEndWords.onanimationend = () => {
+//         animationEndWords.classList.remove("animate__swing");
+//         setTimeout(() => {animationEndWords.classList.add("animate__swing")},50);
         
 
-    };
+//     };
    
-    const animationEndCurrency = document.querySelector(".currency");
-    animationEndCurrency.onanimationend = () => {
-        animationEndCurrency.classList.remove("animate__swing");
-        setTimeout(() => {animationEndCurrency.classList.add("animate__swing")},50);
+//     const animationEndCurrency = document.querySelector(".currency");
+//     animationEndCurrency.onanimationend = () => {
+//         animationEndCurrency.classList.remove("animate__swing");
+//         setTimeout(() => {animationEndCurrency.classList.add("animate__swing")},50);
 
-    };
-// end
+//     };
+// // end
 
 
-// transition toggle() function
-    function transitionToConverter()  {
+// // transition function
+//     function transitionToConverter()  {
 
-        let check1 = document.querySelector('#btncontrolwords');
-        let check2 = document.querySelector('#btncontrol');
-        let ntwElement = document.querySelector('.numberToWord');
-        let choice_cards = document.querySelector('#choice-cards');
+//         let check1 = document.querySelector('#btncontrolwords');
+//         let check2 = document.querySelector('#btncontrol');
+//         let ntwElement = document.querySelector('.numberToWord');
+//         let choice_cards = document.querySelector('#choice-cards');
 
-        // transition
+//         // transition
 
-        function checkboxChecker(element) {
-            element.addEventListener('change', function() {
-                if(element.checked) {
-                    choice_cards.style.setProperty("animation-play-state", "running");
-                    setTimeout(() => {choice_cards.style.display = "none"}, 2450);
-                    ntwElement.style.setProperty("animation-play-state", "running");
-                }
-            });
-        };
-        checkboxChecker(check1);
-        checkboxChecker(check2);
+//         function checkboxChecker(element) {
+//             element.addEventListener('change', function() {
+//                 if(element.checked) {
+//                     choice_cards.style.setProperty("animation-play-state", "running");
+//                     setTimeout(() => {choice_cards.style.display = "none"}, 2450);
+//                     ntwElement.style.setProperty("animation-play-state", "running");
+//                 }
+//             });
+//         };
+//         checkboxChecker(check1);
+//         checkboxChecker(check2);
         
-    };
-    transitionToConverter();
+//     };
+//     transitionToConverter();
 // end
+// 
+//
    
 // ntw input converter
     const input = document.querySelector("#number_to_format");

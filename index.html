@@ -14,33 +14,25 @@
 <body>
     <div id="container">
         <div id="choice-cards">
-            <form class="card-converter words animate__animated animate__swing">
-                <input type = 'checkbox'  id="btncontrolwords" >
-                <label for="btncontrolwords" class="btn ">Words</label>
-                
-            </form>
-            <form class="card-converter currency animate__animated animate__swing">
-                <input type = 'checkbox'  id="btncontrol" >
-                <label for="btncontrol" class="btn">currency</label>
-                
-            </form>
+            <div class = "card-converter left">
+                <input type = 'checkbox'  id="btncontroltest" >
+                <label for="btncontrol" class="btntest">Test</label>
+
+            </div>
+            <div class = "card-converter right">
+                <input type = 'checkbox'  id="btncontroltest" >
+                <label for="btncontrol" class="btntest">Test</label>
+
+            </div>
             
         </div>
-        <div class="numberToWord animate__animated animate__fadeIn">
-            <button id = "goBackBtn" type="button" value="go back" style="width: 5rem; height: 5rem;"></button>
+        <div class="numberToWord">
+            <button id = "goBackBtn" type="button" value="goback">Go back</button>
             <p class="ntf_title">Type in a number to convert to French</p>
             <input id="number_to_format" max="1000000000000" name="ntf_text" step="0.01" type="number">
             <p id="ntf_userOutput">&nbsp;</p>
             <p id="decimal_formatter">&nbsp;</p>
         </div>
-        <div id="empty-1">
-
-        </div>
-        <div id="empty-2">
-
-        </div>
-            
-        
     </div>
 </body>
 </html>
