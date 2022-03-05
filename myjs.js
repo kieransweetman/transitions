@@ -1,7 +1,7 @@
 
  
  document.addEventListener("DOMContentLoaded", function() {
-
+    
     console.log("dom content loaded");
 
 
@@ -11,7 +11,24 @@
 // the functions and their scope.
 
 //PROGRAM
+    const cards = document.querySelector("#choice-cards");
 
+    const toWord = document.querySelector(".card-converter.left");
+
+    toWord.addEventListener("click", function() {
+        document.querySelector('#numberToWord').style.display='flex';
+        document.querySelector('#choice-cards').style.display='none'; 
+        document.querySelector('#ntf_userOutput').style.display='flex';
+
+    });
+    const toCurrency = document.querySelector(".card-converter.right");
+    toCurrency.addEventListener("click", function() {
+        document.getElementById('numberToWord').style.display='flex'; 
+        document.getElementById('choice-cards').style.display='none'; 
+        document.getElementById('decimal_formatter').style.display='flex';
+    })
+
+   
 
 // ntw input converter
     const input = document.querySelector("#number_to_format");
