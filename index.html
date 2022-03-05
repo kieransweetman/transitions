@@ -14,24 +14,27 @@
 <body>
     <div id="container">
         <div id="choice-cards">
-            <div class = "card-converter left">
-                <input type = 'checkbox'  id="btncontroltest" >
-                <label for="btncontrol" class="btntest">Test</label>
-
-            </div>
-            <div class = "card-converter right">
-                <input type = 'checkbox'  id="btncontroltest" >
-                <label for="btncontrol" class="btntest">Test</label>
-
-            </div>
+            <input type = "button"  id = "card-converter left" class = "card-converter left" value="Words" onclick="document.getElementById('numberToWord').style.display='flex'; document.getElementById('choice-cards').style.display='none'; document.getElementById('ntf_userOutput').style.display='flex';">
             
+            <input  type = "button" class = "card-converter right" value="currency" onclick="document.getElementById('numberToWord').style.display='flex'; document.getElementById('choice-cards').style.display='none'; document.getElementById('decimal_formatter').style.display='flex';">
         </div>
-        <div class="numberToWord">
-            <button id = "goBackBtn" type="button" value="goback">Go back</button>
+        <div id="numberToWord">
+            <button id = "goBackBtn" type="button" value="goback" onclick="document.getElementById('numberToWord').style.display='none'; document.getElementById('choice-cards').style.display='flex';  document.getElementById('ntf_userOutput').style.display='none'; document.getElementById('decimal_formatter').style.display='none';">Go back</button>
             <p class="ntf_title">Type in a number to convert to French</p>
-            <input id="number_to_format" max="1000000000000" name="ntf_text" step="0.01" type="number">
+            <input id="number_to_format" max="1000000000000" name="ntf_text" step="0.01" type="number" placeholder="Ex: 7" onfocus="this.value=''">
             <p id="ntf_userOutput">&nbsp;</p>
             <p id="decimal_formatter">&nbsp;</p>
+        </div>
+        <div class="toDo">
+            <h2 class="sections"> 2 Cards:</h2>
+                <p class="desc">each lead to their respective card title: convert to words, or currency
+                </p>
+            <h2 class="sections">User Input field</h2>
+                <ul>
+                    <li>user inputs their choice and recieves output of <em>just their choice.</em></li>
+                    <li> user clicks on field, automatically resets the box.</li>
+                    <li> a back button to choose the other card. </li>
+                </ul>
         </div>
     </div>
 </body>
