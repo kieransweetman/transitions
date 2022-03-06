@@ -12,23 +12,70 @@
 
 //PROGRAM
     const cards = document.querySelector("#choice-cards");
-
     const toWord = document.querySelector(".card-converter.left");
+    const toCurrency = document.querySelector(".card-converter.right");
 
     toWord.addEventListener("click", function() {
-        document.querySelector('#numberToWord').style.display='flex';
-        document.querySelector('#choice-cards').style.display='none'; 
-        document.querySelector('#ntf_userOutput').style.display='flex';
+        
+        animationAdder(cards);
+        let converter = document.getElementById('numberToWord');
 
+        cards.addEventListener('animationend', () => {
+            animationRemover(cards);
+            cards.style.display='none'; 
+            
+            fadeInAnimation(converter);
+            converter.style.display='flex';
+            
+            converter.addEventListener('animationend', function() {
+                animationRemover(converter);
+            })
+            document.querySelector('#ntf_userOutput').style.display='flex';   
+        })
+        
     });
-    const toCurrency = document.querySelector(".card-converter.right");
+
     toCurrency.addEventListener("click", function() {
-        document.getElementById('numberToWord').style.display='flex'; 
-        document.getElementById('choice-cards').style.display='none'; 
-        document.getElementById('decimal_formatter').style.display='flex';
+
+        animationAdder(cards)
+        let converter = document.getElementById('numberToWord');
+
+        cards.addEventListener('animationend', () => {
+            animationRemover(cards);
+            cards.style.display='none'; 
+
+            fadeInAnimation(converter);
+            converter.style.display='flex';
+
+            converter.addEventListener('animationend', function() {
+                animationRemover(converter)
+                
+                document.getElementById('decimal_formatter').style.display='flex';
+            })
+
+        })
+
     })
 
+    function animationAdder(element) {
+        element.style.setProperty('animation', 'fadeOut');
+        element.style.setProperty('animation-play-state', 'running');
+        element.style.setProperty('animation-duration', '2s')
+        element.style.setProperty('--animate-repeat', 1)
+    }
+    function animationRemover(element) {
+        element.style.setProperty('animation', '');
+        element.style.setProperty('animation-play-state', '');
+        element.style.setProperty('animation-duration', '')
+        element.style.setProperty('--animate-repeat', '' )
+    }
    
+    function fadeInAnimation(element) {
+        element.style.setProperty('animation', 'fadeIn');
+        element.style.setProperty('animation-play-state', 'running');
+        element.style.setProperty('animation-duration', '2s')
+        element.style.setProperty('--animate-repeat', 1 )
+    }
 
 // ntw input converter
     const input = document.querySelector("#number_to_format");
@@ -54,6 +101,20 @@
         decimal.textContent = new Intl.NumberFormat('fr-FR', {style: 'currency', currency: 'EUR'}).format(input.value);
 
  });
+
+ //BACK button
+
+    const backBtn = document.getElementById('goBackBtn')
+    backBtn.addEventListener('click', function () {
+        let converter = document.getElementById('numberToWord');
+        converter.style.display = 'none';
+
+        
+    })
+ //onclick="document.getElementById('numberToWord').style.display='none'; 
+ //document.getElementById('choice-cards').style.display='flex';  
+ //document.getElementById('ntf_userOutput').style.display='none'; 
+ //document.getElementById('decimal_formatter').style.display='none';"
 
 
  });
