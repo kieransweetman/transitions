@@ -11,48 +11,61 @@
 // the functions and their scope.
 
 //PROGRAM
-    const cards = document.querySelector("#choice-cards");
+    
     const toWord = document.querySelector(".card-converter.left");
     const toCurrency = document.querySelector(".card-converter.right");
-
+    toWord.onClic
     toWord.addEventListener("click", function() {
-        
+        const cards = document.querySelector("#choice-cards");
+        const converter = document.getElementById('numberToWord');
         animationAdder(cards);
-        let converter = document.getElementById('numberToWord');
 
-        cards.addEventListener('animationend', () => {
+        cards.addEventListener('animationend', function() {
+            cards.style.display = "none";
             animationRemover(cards);
-            cards.style.display='none'; 
-            
-            fadeInAnimation(converter);
-            converter.style.display='flex';
-            
-            converter.addEventListener('animationend', function() {
-                animationRemover(converter);
-            })
-            document.querySelector('#ntf_userOutput').style.display='flex';   
+            converter.style.display = 'flex';
+            fadeInAnimation(converter);  
         })
         
+        animationRemover(converter);
+        
+        
+        // fadeInAnimation(converter);
+        // converter.style.display = "flex";
+
+        // animationRemover(cards);
+        // animationRemover(converter);
+
+        // document.querySelector('#ntf_userOutput').style.display='flex'; 
+
+        // cards.addEventListener('animationend', () => {
+        //     animationRemover(cards);
+        //     cards.style.display='none'; 
+            
+        //     fadeInAnimation(converter);
+        //     converter.style.display='flex';
+            
+        //     converter.addEventListener('animationend', function() {
+        //         animationRemover(converter);
+        //     })
+        //     document.querySelector('#ntf_userOutput').style.display='flex';   
+        // })
     });
 
     toCurrency.addEventListener("click", function() {
+        const cards = document.querySelector("#choice-cards");
 
         animationAdder(cards)
         let converter = document.getElementById('numberToWord');
 
         cards.addEventListener('animationend', () => {
-            animationRemover(cards);
             cards.style.display='none'; 
+            animationRemover(cards);
+            
 
             fadeInAnimation(converter);
             converter.style.display='flex';
-
-            converter.addEventListener('animationend', function() {
-                animationRemover(converter)
-                
-                document.getElementById('decimal_formatter').style.display='flex';
-            })
-
+            animationRemover(converter);
         })
 
     })
@@ -61,7 +74,7 @@
         element.style.setProperty('animation', 'fadeOut');
         element.style.setProperty('animation-play-state', 'running');
         element.style.setProperty('animation-duration', '2s')
-        element.style.setProperty('--animate-repeat', 1)
+        element.style.setProperty('--animate-repeat', "")
     }
     function animationRemover(element) {
         element.style.setProperty('animation', '');
@@ -74,7 +87,7 @@
         element.style.setProperty('animation', 'fadeIn');
         element.style.setProperty('animation-play-state', 'running');
         element.style.setProperty('animation-duration', '2s')
-        element.style.setProperty('--animate-repeat', 1 )
+        element.style.setProperty('--animate-repeat', "" )
     }
 
 // ntw input converter
@@ -106,9 +119,15 @@
 
     const backBtn = document.getElementById('goBackBtn')
     backBtn.addEventListener('click', function () {
-        let converter = document.getElementById('numberToWord');
+        const converter = document.getElementById('numberToWord');
+        const div_choiceChards = document.getElementById('choice-cards');
+        //formating
         converter.style.display = 'none';
 
+        div_choiceChards.style.cssText = "animation: fadeIn; animation-duration: 2s; "
+        div_choiceChards.style.display ='flex';
+
+        
         
     })
  //onclick="document.getElementById('numberToWord').style.display='none'; 
