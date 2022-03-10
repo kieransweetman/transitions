@@ -14,7 +14,6 @@
     
     const toWord = document.querySelector(".card-converter.left");
     const toCurrency = document.querySelector(".card-converter.right");
-    toWord.onClic
     toWord.addEventListener("click", function() {
         const cards = document.querySelector("#choice-cards");
         const converter = document.getElementById('numberToWord');
@@ -28,28 +27,6 @@
         })
         
         animationRemover(converter);
-        
-        
-        // fadeInAnimation(converter);
-        // converter.style.display = "flex";
-
-        // animationRemover(cards);
-        // animationRemover(converter);
-
-        // document.querySelector('#ntf_userOutput').style.display='flex'; 
-
-        // cards.addEventListener('animationend', () => {
-        //     animationRemover(cards);
-        //     cards.style.display='none'; 
-            
-        //     fadeInAnimation(converter);
-        //     converter.style.display='flex';
-            
-        //     converter.addEventListener('animationend', function() {
-        //         animationRemover(converter);
-        //     })
-        //     document.querySelector('#ntf_userOutput').style.display='flex';   
-        // })
     });
 
     toCurrency.addEventListener("click", function() {
@@ -115,25 +92,6 @@
 
  });
 
- //BACK button
-
-    const backBtn = document.getElementById('goBackBtn')
-    backBtn.addEventListener('click', function () {
-        const converter = document.getElementById('numberToWord');
-        const div_choiceChards = document.getElementById('choice-cards');
-        //formating
-        converter.style.display = 'none';
-
-        div_choiceChards.style.cssText = "animation: fadeIn; animation-duration: 2s; "
-        div_choiceChards.style.display ='flex';
-
-        
-        
-    })
- //onclick="document.getElementById('numberToWord').style.display='none'; 
- //document.getElementById('choice-cards').style.display='flex';  
- //document.getElementById('ntf_userOutput').style.display='none'; 
- //document.getElementById('decimal_formatter').style.display='none';"
 
 
  });

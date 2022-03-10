@@ -38,13 +38,12 @@
 
 
 .card-converter:hover {
-    box-shadow: 2px 2px 5px white, -2px -2px 5px white ;
-    background-color: orange;
+    box-shadow: 2px 2px 5px white,white ;
+    background-color: white;
     transform: rotate(5deg)
     
     
 }
-
 
 
 #numberToWord {
